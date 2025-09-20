@@ -8,6 +8,7 @@ This repository automatically builds the **Meshtastic firmware** for the
 - Each artifact includes:
   - `firmware.bin`
   - `firmware.factory.bin`
+- Or go to releases
 
 ## Flashing
 Example (Linux/macOS):
