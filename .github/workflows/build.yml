@@ -1,0 +1,51 @@
+name: Build Meshtastic Heltec V2
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: "0 2 * * *"   # run daily at 02:00 UTC
+  workflow_dispatch:        # allow manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install PlatformIO
+        run: |
+          pip install -U pip
+          pip install platformio
+
+      - name: Fetch Meshtastic firmware
+        run: |
+          git clone --depth=1 --recurse-submodules https://github.com/meshtastic/firmware.git
+          cd firmware
+          git checkout develop   # or 'master' if you prefer stable
+
+      - name: Build Heltec V2 firmware
+        run: |
+          cd firmware
+          pio run -e heltec-v2_0
+
+      - name: Upload firmware binaries
+        uses: actions/upload-artifact@v4
+        with:
+          name: heltec-v2-firmware
+          path: |
+            firmware/.pio/build/heltec-v2_0/firmware*.bin
+
+      - name: Release nightly
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: nightly-${{ github.run_number }}
+          name: Nightly build ${{ github.run_number }}
+          files: |
+            firmware/.pio/build/heltec-v2_0/firmware*.bin
