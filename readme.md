@@ -1,7 +1,7 @@
 # Meshtastic Heltec V2.1 Auto-Builds
 
 This repository automatically builds the **Meshtastic firmware** for the  
-**Heltec WiFi LoRa 32 V2** board every night (development branch).
+**Heltec WiFi LoRa 32 V2.1** board every night (development branch).
 
 ## Downloads
 - Go to the [Actions tab](../../actions) → click the latest run → download the `heltec-v2-firmware` artifact.
