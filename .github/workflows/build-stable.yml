@@ -1,4 +1,4 @@
-name: Build Meshtastic Heltec V2 (on upstream release)
+name: Build Meshtastic Heltec V2.1 (on upstream release)
 
 on:
   workflow_dispatch:     # Manual trigger for testing
@@ -38,14 +38,14 @@ jobs:
           cd firmware
           git submodule update --init --recursive
 
-      - name: Build Heltec V2 firmware
+      - name: Build Heltec V2.1 firmware
         run: |
           cd firmware
-          pio run -e heltec-v2_0
+          pio run -e heltec-v2_1
 
       - name: Upload firmware binaries
         uses: actions/upload-artifact@v4
         with:
           name: heltec-v2-${{ steps.get_release.outputs.tag }}
           path: |
-            firmware/.pio/build/heltec-v2_0/firmware*.bin
+            firmware/.pio/build/heltec-v2_1/firmware*.bin
