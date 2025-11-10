@@ -30,7 +30,7 @@ jobs:
           cd firmware
           git checkout develop   # or 'master' if you prefer stable
 
-      - name: Build Heltec V2 latest_beta_firmware
+      - name: Build Heltec V2.1 latest_beta_firmware
         run: |
           cd firmware
           pio run -e heltec-v2_1
