@@ -26,7 +26,7 @@ jobs:
 
       - name: Fetch Meshtastic firmware
         run: |
-          git clone --depth=1 --recurse-submodules https://github.com/meshtastic/firmware.git
+          git clone --depth=1 --recurse-submodules ${{ steps.get_release.outputs.tag }} https://github.com/meshtastic/firmware.git
           cd firmware
           git checkout develop   # or 'master' if you prefer stable
 
@@ -38,6 +38,6 @@ jobs:
       - name: Upload firmware binaries
         uses: actions/upload-artifact@v4
         with:
-          name: heltec-v2.1-latest_beta_firmware
+          name: heltec-v2.1-latest_beta_fw$-{{ steps.get_release.outputs.tag }}
           path: |
             firmware/.pio/build/heltec-v2_1/firmware*.bin
