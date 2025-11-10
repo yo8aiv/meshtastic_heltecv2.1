@@ -1,4 +1,4 @@
-name: Build Meshtastic Heltec V2.1 (on upstream release)
+name: Build Meshtastic Heltec V2.1 (on stable release)
 
 on:
   workflow_dispatch:     # Manual trigger for testing
@@ -32,13 +32,13 @@ jobs:
           echo "Latest Meshtastic release: $LATEST_TAG"
           echo "tag=$LATEST_TAG" >> $GITHUB_OUTPUT
 
-      - name: Clone Meshtastic firmware at latest release
+      - name: Clone Meshtastic firmware at latest stable release
         run: |
           git clone --depth=1 --branch ${{ steps.get_release.outputs.tag }} https://github.com/meshtastic/firmware.git
           cd firmware
           git submodule update --init --recursive
 
-      - name: Build Heltec V2.1 firmware
+      - name: Build Heltec V2.1 stable firmware
         run: |
           cd firmware
           pio run -e heltec-v2_1
