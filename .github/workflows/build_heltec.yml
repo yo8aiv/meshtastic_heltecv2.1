@@ -40,4 +40,4 @@ jobs:
         with:
           name: heltec-v2.1-latest_beta_firmware
           path: |
-            firmware/.pio/build/heltec-v2_1/latest_beta_firmware*.bin
+            firmware/.pio/build/heltec-v2_1/firmware*.bin
