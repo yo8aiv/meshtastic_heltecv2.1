@@ -10,7 +10,12 @@ This repository automatically builds the **Meshtastic firmware** for the
   - `firmware.factory.bin`
 - Or go to releases
 
+
 ## Flashing
+
+use this web-flasher to flash your firmware [https://yo8aiv.github.io/web-flash](https://yo8aiv.github.io/web-flash)
+- flashing procedure is as usual with esp32
+
 Example (Linux/macOS):
 ```bash
 esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x0 firmware.factory.bin
