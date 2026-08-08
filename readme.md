@@ -11,7 +11,7 @@ Automated **Meshtastic firmware** builds compiled every night directly from the 
 
 Don't want to mess with command-line tools? Flash your Heltec V2.1 board directly from your Google Chrome or Microsoft Edge browser:
 
-👉 **[Launch the Web Flasher](https://yo8aiv.github.io/web-flash](https://yo8aiv.github.io/web-flash).** 👈
+👉 **[Launch the Web Flasher](https://yo8aiv.github.io/web-flash).** 👈
 
 ---
 
