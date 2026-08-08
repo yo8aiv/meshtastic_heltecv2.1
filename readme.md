@@ -1,6 +1,6 @@
 # 📡 Meshtastic Heltec V2.1 Automated Nightly Builds
 
-[![GitHub Actions](https://shields.io)](https://github.com)
+[![GitHub Actions](https://github.com/yo8aiv/meshtastic_heltecv2.1/actions)
 [![Latest Release](https://shields.io)](https://github.com)
 
 Automated **Meshtastic firmware** builds compiled every night directly from the official development branch, specifically optimized for the **Heltec WiFi LoRa 32 V2.1** board. Perfect for users tracking cutting-edge updates or utilizing legacy hardware modifications (such as charging and GPS mods).
