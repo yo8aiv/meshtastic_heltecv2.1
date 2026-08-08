@@ -21,7 +21,7 @@ You can obtain the fresh compiled files in two ways:
 
 1. **GitHub Releases (Stable/Latest Checkpoints):** Navigate to the [Releases](https://github.com) section to pick up the most recent pre-packaged release binaries.
 2. **GitHub Actions Artifacts (Strictly Nightly):** 
-   * Go to the [Actions tab](https://github.com).
+   * Go to the [Actions tab](https://github.com/yo8aiv/meshtastic_heltecv2.1/actions).
    * Click on the top-most successful workflow run.
    * Scroll down to **Artifacts** and download `heltec-v2-firmware`.
 
